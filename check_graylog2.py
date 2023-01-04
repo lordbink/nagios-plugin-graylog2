@@ -84,7 +84,7 @@ class Graylog2Check(nagiosplugin.Resource):
 
 		yield nagiosplugin.Metric('graylog2_processing', system['is_processing'])
 
-		if distutils.version.LooseVersion(system['version']) < distutils.version.LooseVersion('5.0.0'):
+		if distutils.version.LooseVersion(system['version']) < distutils.version.LooseVersion('6.0.0'):
 			events = self.get_api_data('/count/total')
 			yield nagiosplugin.Metric('events', events['events'])
 		else:
